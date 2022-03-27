@@ -8,3 +8,8 @@
 * B站视频
 * 第三方插件
   * highlight.js
+
+```shell
+hugo version
+hugo v0.93.0-07469082+extended windows/amd64 BuildDate=2022-02-28T08:30:42Z VendorInfo=gohugoio
+```
