@@ -3,36 +3,34 @@
 <article>
     <a href="{{ .Permalink }}">
         <h2 class="post-title">
-            {{ .Title }}
+            📙 {{ .Title }}
         </h2>
     </a>
-    <div>
-        日期：{{ .Date.Format "2006-01-02" }}；分类：{{ .Params.Categories }}；标签：{{ .Params.Tags }}
-    </div>
+    <small>
+        📅{{ .Date.Format "2006-01-02" }}
+        📁{{ .Params.Categories }}
+        📌{{ .Params.Tags }}
+    </small>
     <div>
         {{ with .Description }}
         {{ . }}
         {{ else }}
         {{ .Summary}}
         {{ end }}
-    </div> <a href="{{ .RelPermalink }}">Read More…</a>
-</article>
-<p class="post-meta">
-    {{ if .Params.metadata }}
-        {{ range $index, $element := .Params.metadata }}
-            {{ if .link }}
-                <a href="{{ .link }}">{{ .text }}</a>
-            {{ else }}
-                {{ .text }}
+    </div>
+    <a href="{{ .RelPermalink }}">🔗阅读更多…</a>
+    
+        {{ if .Params.metadata }}
+        <p class="post-meta">
+            {{ range $index, $element := .Params.metadata }}
+                {{ if .link }}
+                    <a href="{{ .link }}">{{ .text }}</a>
+                {{ else }}
+                    {{ .text }}
+                {{ end }}
             {{ end }}
         {{ end }}
-    {{ else }}
-        Posted by{{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}  {{ .Date.Format "Monday, January 2, 2006" }}
-        <!-- Don't show "Last Modified on" if update happened on the same day. -->
-        {{ if (and (not .Lastmod.IsZero) (not (eq (dateFormat "2006-01-02" .Lastmod) (dateFormat "2006-01-02" .Date)))) }}
-            <br>Last Modified on {{ dateFormat "Monday, January 2, 2006" .Params.LastMod }} 
-        {{ end }}
-    {{ end }}
-    </p>
+</article>
+
 <hr />
 {{ end }}

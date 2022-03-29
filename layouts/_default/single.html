@@ -2,7 +2,7 @@
 
 <article>
     <div class="container">
-
+        <h2>📖{{.Title}}</h2>
         {{ partial "toc" . }}
         <hr />
 
@@ -13,56 +13,18 @@
         {{ end }}
 
         <hr>
-        <center text-align="center">
+        <div>
             {{ if .PrevInSection }}
                 <a href="{{ .PrevInSection.RelPermalink }}" 
-            title="{{ .PrevInSection.Title}}">&larr;
-            上一篇《{{ .PrevInSection.Title}}》</a>
+            title="{{ .PrevInSection.Title}}">
+            《{{ .PrevInSection.Title}}》</a>⬅
             {{ end }}
-            ·
+            🧰
             {{ if .NextInSection }}
-                <a href="{{ .NextInSection.RelPermalink }}" 
-                    title="{{ .NextInSection.Title}}">下一篇《{{ .NextInSection.Title}}》&rarr;</a>
+            ➡<a href="{{ .NextInSection.RelPermalink }}" 
+                    title="{{ .NextInSection.Title}}">《{{ .NextInSection.Title}}》</a>
             {{ end }}
-        </center>
-
-            <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                {{ if .Site.Params.featured_tags }}
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                        {{ $featured_condition_size := .Site.Params.featured_condition_size }}
-                        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                        {{ if gt (len $taxonomy.Pages) $featured_condition_size }}
-                        <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">
-                            {{ $name }}
-                        </a>
-                        {{ end }}
-                        {{ end }}
-                    </div>
-                </section>
-                {{ end }}
-
-                <!-- Friends Blog -->
-                {{ if .Site.Params.friends }}
-                <section>
-                    <hr>
-                    <h5>FRIENDS</h5>
-                    <ul class="list-inline">
-                        {{ range .Site.Params.friend_link }}
-                        <li><a target="_blank" href="{{.href}}">{{.title}}</a></li>
-                        {{ end }}
-                    </ul>
-                </section>
-                {{ end }}
-            </div>
+        </div>
     </div>
     </div>
 </article>

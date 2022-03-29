@@ -1,9 +1,9 @@
 <header class="homepage-header">
-    <h1>{{.Title}}</h1>
+    <h1>{{ .Site.Title }}</h1>
     <span class="subtitle">{{ .Site.Params.SEOTitle }}</span>
 </header>
 <hr />
-&nbsp;&nbsp;<a href="{{ "/" | relLangURL }}">首页</a>&nbsp;&nbsp;
+&nbsp;&nbsp;<a href="{{ "/" | relLangURL }}">🏠首页</a>&nbsp;&nbsp;
 {{ range $name, $taxonomy := .Site.Taxonomies.categories  }}
-|&nbsp;&nbsp;<a class="navbar-item" href="{{ "categories/" | relLangURL }}{{ $name | urlize }}">{{ $name | title }}</a>&nbsp;&nbsp;
+|&nbsp;&nbsp;<a class="navbar-item" href="{{ "categories/" | relLangURL }}{{ $name | urlize }}">📁{{ $name | title }}</a>&nbsp;&nbsp;
 {{ end }}
