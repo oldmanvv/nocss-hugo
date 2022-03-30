@@ -13,7 +13,7 @@
         {{ end }}
 
         <hr>
-        <div>
+        <p>
             {{ if .PrevInSection }}
                 <a href="{{ .PrevInSection.RelPermalink }}" 
             title="{{ .PrevInSection.Title}}">
@@ -24,7 +24,7 @@
             ➡<a href="{{ .NextInSection.RelPermalink }}" 
                     title="{{ .NextInSection.Title}}">《{{ .NextInSection.Title}}》</a>
             {{ end }}
-        </div>
+        </p>
     </div>
     </div>
 </article>

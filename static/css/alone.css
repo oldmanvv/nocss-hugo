@@ -1,13 +1,14 @@
-#content img{
-    max-width: 1000px;
+.container img{
+    max-width: 800px;
+    display: block;
 }
 .biliplayer {
     width: 1000px;
     height: 550px;
 }
 
-@media screen and (max-width: 600px) {
-    #content img{
+@media screen and (max-width: 1000px) {
+    .container img{
         width: 100%;
     }
     .biliplayer {
