@@ -1,7 +1,7 @@
 <!-- post list -->
 {{ range $index, $element := $.Paginator.Pages }}
 <article>
-    <a href="{{ .Permalink }}">
+    <a href="{{ .Permalink }}"  target="_blank">
         <h2 class="post-title">
             📙 {{ .Title }}
         </h2>
@@ -18,7 +18,7 @@
         {{ .Summary}}
         {{ end }}
     </div>
-    <a href="{{ .RelPermalink }}">🔗阅读更多…</a>
+    <a href="{{ .RelPermalink }}" target="_blank">🔗阅读更多…</a>
     
         {{ if .Params.metadata }}
         <p class="post-meta">
