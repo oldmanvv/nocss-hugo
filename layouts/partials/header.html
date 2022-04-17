@@ -7,4 +7,7 @@
 {{ range $name, $taxonomy := .Site.Taxonomies.categories  }}
 |&nbsp;&nbsp;<a class="navbar-item" href="{{ "categories/" | relLangURL }}{{ $name | urlize }}">📁{{ $name | title }}</a>&nbsp;&nbsp;
 {{ end }}
+{{ range .Site.Menus.main }}
+|&nbsp;&nbsp;<a href="{{ .URL }}" title="{{ .Name }}" target="_blank">{{ .Name }}</a>
+{{ end }} 
 <hr />
