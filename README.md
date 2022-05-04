@@ -6,13 +6,18 @@
 
 目前仅有的`css/alone.css`作用是：
 * 限制图片尺寸
+* github-markdown.css
 * 插入B站视频
   * `{{<b 视频ID>}}`
 * 第三方插件
   * highlight.js
   * katex
-    * 在文章Front-matter写入`katex: true`
+    * 在文章Front-matter设置`katex: true`
 
+根据`archetypes/post.md`的模板新建文章：
+```
+hugo --verbose new post/文章标题.md
+```
 
 站点的config必要配置
 ```toml
