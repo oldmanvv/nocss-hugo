@@ -1,14 +1,14 @@
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
 {{ if $pag.HasPrev }}
-    <a href="{{ $pag.Prev.URL }}">&larr; 上一页 | </a>
+    <a href="{{ $pag.Prev.Page.RelPermalink }}">&larr; 上一页 | </a>
 {{ end }}
 &nbsp;&nbsp;
 {{ range $pag.Pagers }}
-{{ if eq . $pag }} 
+{{ if eq . $pag }}
 【{{ .PageNumber }}】
 {{ else }}
-<a href="{{ .URL }}">
+<a href="{{ .Page.RelPermalink }}">
 【{{ .PageNumber }}】
 </a>
 {{ end }}
@@ -17,7 +17,7 @@
 {{ end }}
 
 {{ if $pag.HasNext }}
-    <a href="{{ $pag.Next.URL }}"> | 下一页 &rarr;</a>
+    <a href="{{ $pag.Next.Page.RelPermalink }}"> | 下一页 &rarr;</a>
 {{ end }}
 
 

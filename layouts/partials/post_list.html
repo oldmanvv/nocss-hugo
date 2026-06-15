@@ -1,35 +1,36 @@
 <!-- post list -->
 {{ range $index, $element := $.Paginator.Pages }}
 <article>
-    <a href="{{ .Permalink }}"  target="_blank">
+    <a href="{{ .RelPermalink }}" target="_blank">
         <h2 class="post-title">
             📙 {{ .Title }}
         </h2>
     </a>
     <small>
         📅{{ .Date.Format "2006-01-02" }}
-        📁{{ .Params.Categories }}
-        📌{{ .Params.Tags }}
+        {{ with .Params.categories }}📁{{ delimit . ", " }}{{ end }}
+        {{ with .Params.tags }}📌{{ delimit . ", " }}{{ end }}
     </small>
     <div>
         {{ with .Description }}
         {{ . }}
         {{ else }}
-        {{ .Summary}}
+        {{ .Summary }}
         {{ end }}
     </div>
     <a href="{{ .RelPermalink }}" target="_blank">🔗阅读更多…</a>
     
-        {{ if .Params.metadata }}
-        <p class="post-meta">
-            {{ range $index, $element := .Params.metadata }}
-                {{ if .link }}
-                    <a href="{{ .link }}">{{ .text }}</a>
-                {{ else }}
-                    {{ .text }}
-                {{ end }}
+    {{ if .Params.metadata }}
+    <p class="post-meta">
+        {{ range $index, $element := .Params.metadata }}
+            {{ if .link }}
+                <a href="{{ .link }}">{{ .text }}</a>
+            {{ else }}
+                {{ .text }}
             {{ end }}
         {{ end }}
+    </p>
+    {{ end }}
 </article>
 
 <hr />

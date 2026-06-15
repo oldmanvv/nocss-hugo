@@ -1,12 +1,23 @@
+{{- $title := .Title -}}
+{{- $subtitle := .Site.Params.Subtitle | default "" -}}
+{{- $keyword := $title -}}
+{{- $pageTitle := $title -}}
+{{- if and $title $subtitle -}}
+    {{- $keyword = printf "%s-%s" $title $subtitle -}}
+    {{- $pageTitle = printf "%s-%s" $title $subtitle -}}
+{{- else if not $title -}}
+    {{- $keyword = $subtitle -}}
+    {{- $pageTitle = $subtitle -}}
+{{- end -}}
 <!DOCTYPE html>
 <html lang="zh-cn">
-    <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <meta name="keyword"  content="{{ if .Title }}{{ .Title }}-{{ .Site.Params.Subtitle }}{{ end }}">
-    <meta name="description"  content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary}}{{ end }}">
+    <meta name="keyword" content="{{ $keyword }}">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌚</text></svg>">
-    <title>{{ if .Title }}{{ .Title }}-{{ .Site.Params.Subtitle }}{{ end }}</title>
+    <title>{{ $pageTitle }}</title>
 
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/tomorrow-night-blue.min.css">
@@ -19,7 +30,7 @@
     (function() {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?{{ .Site.Params.baiduTongji }}";
-        var s = document.getElementsByTagName("script")[0]; 
+        var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();
     </script>

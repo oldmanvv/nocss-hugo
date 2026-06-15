@@ -1,21 +1,35 @@
-.container img{
-    max-width: 800px;
+.container img {
+    max-width: 100%;
+    height: auto;
     display: block;
 }
-.container p{
+
+.container p {
     text-indent: 2em;
 }
+
 .biliplayer {
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     height: 550px;
 }
+
 pre > code {
     font-family: "Sans Mono", "Consolas", "Courier", monospace;
-    font-size:18px;
+    font-size: 18px;
+}
+
+.toc ul {
+    list-style-type: none;
+    padding-left: 1.5em;
+}
+
+.toc > nav > ul {
+    padding-left: 0;
 }
 
 @media screen and (max-width: 1000px) {
-    .container img{
+    .container img {
         width: 100%;
     }
     .biliplayer {

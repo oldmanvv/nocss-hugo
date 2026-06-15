@@ -1,6 +1,6 @@
 {{ define "main" }}
-<h2>📁{{.Title}}相关的文章</h2>
-{{ $paginator := .Paginate (where .Data.Pages "Section" "post") }}
+<h2>📁{{ .Title }}相关的文章</h2>
+{{ $paginator := .Paginate (where .Pages "Section" "post") }}
 {{ partial "post_list.html" . }}
 
 {{ end }}

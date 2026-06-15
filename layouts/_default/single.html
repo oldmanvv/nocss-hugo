@@ -2,7 +2,7 @@
 
 <article>
     <div class="container markdown-body">
-        <h2>📖{{.Title}}</h2>
+        <h2>📖{{ .Title }}</h2>
         {{ partial "toc" . }}
         <hr />
 
@@ -14,18 +14,14 @@
 
         <hr>
         <p>
-            {{ if .PrevInSection }}
-                <a href="{{ .PrevInSection.RelPermalink }}" 
-            title="{{ .PrevInSection.Title}}">
-            《{{ .PrevInSection.Title}}》</a>⬅
+            {{ with .Prev }}
+                <a href="{{ .RelPermalink }}" title="{{ .Title }}">《{{ .Title }}》</a>⬅
             {{ end }}
             🧰
-            {{ if .NextInSection }}
-            ➡<a href="{{ .NextInSection.RelPermalink }}" 
-                    title="{{ .NextInSection.Title}}">《{{ .NextInSection.Title}}》</a>
+            {{ with .Next }}
+                ➡<a href="{{ .RelPermalink }}" title="{{ .Title }}">《{{ .Title }}》</a>
             {{ end }}
         </p>
-    </div>
     </div>
 </article>
 
