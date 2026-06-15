@@ -1,6 +1,6 @@
 # 这是一个没有CSS的Hugo博客主题
 
-[💾代码库](https://github.com/OlddogClock/nocss-hugo) | [👓预览](https://oldman.wang)
+[💾代码库](https://github.com/oldmanvv/nocss-hugo) | [👓预览](https://oldman.wang)
 
 但是，由于各种各样的原因，还是要有一些CSS的
 
@@ -14,16 +14,15 @@
   * katex
     * 在文章Front-matter设置`katex: true`
 
-根据`archetypes/post.md`的模板新建文章：
 ```
-hugo --verbose new post/文章标题.md
+hugo new post/文章标题.md
 ```
 
 站点的config必要配置
 ```toml
 [params]
-SEOTitle = "一个老伙计心中的少年。天文 无线电"
-Subtitle = "一个老伙计心中的少年。PS:这是一个没有CSS的站点"
+SEOTitle = ""
+Subtitle = ""
 TOC = true
 baiduTongji = "d2b64b94332edb95313ab7ff3a2b2f56"
 
@@ -36,6 +35,6 @@ category = "categories"
 
 ```shell
 hugo version
-hugo v0.93.0-07469082+extended windows/amd64 BuildDate=2022-02-28T08:30:42Z VendorInfo=gohugoio
+hugo v0.163.1-2a4fd58818ffdf45bbb2a97ab119bb4c46cd93f0+withdeploy linux/amd64 BuildDate=2026-06-11T15:34:40Z VendorInfo=gohugoio
 ```
 

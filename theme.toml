@@ -1,17 +1,17 @@
 name = "nocss-hugo"
 license = "MIT"
-licenselink = "https://github.com/OlddogClock/nocss-hugo/blob/main/LICENSE"
+licenselink = "https://github.com/oldmanvv/nocss-hugo/blob/main/LICENSE"
 description = "A minimal Hugo theme without CSS (well, almost)."
-homepage = "https://github.com/OlddogClock/nocss-hugo"
+homepage = "https://github.com/oldmanvv/nocss-hugo"
 tags = ["blog", "minimal", "chinese", "no-css"]
 features = ["responsive", "toc", "katex", "highlight.js"]
 min_version = "0.123.0"
 
 [author]
-  name = "OlddogClock"
-  homepage = "https://github.com/OlddogClock"
+  name = "oldmanvv"
+  homepage = "https://github.com/oldmanvv"
 
 [original]
-  name = "OlddogClock"
-  homepage = "https://github.com/OlddogClock/nocss-hugo"
-  repo = "https://github.com/OlddogClock/nocss-hugo"
+  name = "oldmanvv"
+  homepage = "https://github.com/oldmanvv/nocss-hugo"
+  repo = "https://github.com/oldmanvv/nocss-hugo"
