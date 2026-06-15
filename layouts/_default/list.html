@@ -2,7 +2,7 @@
 
 <h2>📂{{ .Title }}</h2>
 
-{{ $paginator := .Paginate (where .Pages "Type" "post") }}
+{{ $paginator := .Paginate (where .Pages "Type" "posts") }}
 {{ partial "post_list.html" . }}
 
 {{ end }}

@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
 {{ partial "post_list.html" . }}
 
 {{ end }}
